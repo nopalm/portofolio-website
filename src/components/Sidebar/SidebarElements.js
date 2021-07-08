@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
-import { LinkS } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 export const SidebarContainer = styled.aside`
   position: fixed;
@@ -35,7 +35,7 @@ export const SidebarWrapper = styled.div`
   color: #fff;
 `;
 
-export const SidebarLink = styled(LinkS)`
+export const SidebarLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,10 +56,10 @@ export const SidebarLink = styled(LinkS)`
 export const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 80px);
+  grid-template-rows: repeat(3, 30px);
   text-align: center;
 
   @media screen and (max-width: 480px) {
-    grid-template-columns: repeat(6, 60px);
+    grid-template-row: repeat(4, 20px);
   }
 `;
