@@ -31,7 +31,7 @@ const HeroSection = () => {
           <HeroP>Start Code RN!</HeroP>
           <HeroBtnWrapper>
             <Button
-              to='getstart'
+              to='signup'
               onMouseEnter={onHover}
               onMouseLeave={onHover}
               primary='true'

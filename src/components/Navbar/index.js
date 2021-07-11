@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
+import { animateScroll as scroll } from 'react-scroll';
 import {
   Nav,
   NavbarContainer,
@@ -11,23 +12,70 @@ import {
 } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
+  const [scrolNav, setScrolNav] = useState(false);
+
+  const changedNav = () => {
+    if (window.scrollY >= 80) {
+      setScrolNav(true);
+    } else {
+      setScrolNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changedNav);
+  }, []);
+
+  const toogleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
-      <Nav>
+      <Nav scrolNav={scrolNav}>
         <NavbarContainer>
-          <NavLogo to='/'>kekW</NavLogo>
+          <NavLogo to='/' onClick={toogleHome}>
+            kekW
+          </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to='about'>About</NavLinks>
+              <NavLinks
+                to='about'
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact='true'
+                offset={-80}
+              >
+                About
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='discover'>discover</NavLinks>
+              <NavLinks
+                to='discover'
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact='true'
+                offset={-80}
+              >
+                Discover
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='services'>services</NavLinks>
+              <NavLinks
+                to='services'
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact='true'
+                offset={-80}
+              >
+                Services
+              </NavLinks>
             </NavItem>
           </NavMenu>
         </NavbarContainer>
