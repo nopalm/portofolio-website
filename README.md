@@ -2,5 +2,5 @@
 
 Portofolio Website react with styled components
 
-Demo : 
-https://portofolio-website-default.netlify.app/
+Demo :
+https://nopalm.github.io/portofolio-website/
