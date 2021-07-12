@@ -35,7 +35,7 @@ const Navbar = ({ toggle }) => {
       <Nav scrolNav={scrolNav}>
         <NavbarContainer>
           <NavLogo to='/' onClick={toogleHome}>
-            kekW
+            Logo
           </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
